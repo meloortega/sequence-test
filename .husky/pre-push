@@ -1,0 +1,3 @@
+echo "Ejecutando pre-push..."
+
+npm run build || exit 1
