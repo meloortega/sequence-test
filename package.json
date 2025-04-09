@@ -10,9 +10,12 @@
     "ng": "ng",
     "start:dev": "ng serve --configuration development & npx json-server --watch mock.json",
     "start:prod": "ng serve --configuration production",
-    "build": "ng build",
+    "build:dev": "ng build --configuration development",
+    "build:prod": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "e2e": "cypress open",
+    "e2e:headless": "cypress run"
   },
   "private": true,
   "dependencies": {
@@ -41,6 +44,7 @@
     "@angular/cli": "^19.2.5",
     "@angular/compiler-cli": "^19.2.0",
     "@types/jasmine": "~5.1.0",
+    "cypress": "^14.3.0",
     "husky": "^9.1.7",
     "jasmine-core": "~5.6.0",
     "karma": "~6.4.0",
