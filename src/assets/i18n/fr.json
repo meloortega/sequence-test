@@ -16,7 +16,8 @@
     "LOADING": "Chargement...",
     "NO_DATA": "Aucune donnée disponible",
     "PRESS_ENTER_EDIT": "appuyez sur entrée pour modifier",
-    "REMOVE": "supprimer"
+    "REMOVE": "supprimer",
+    "ADD": "Ajouter"
   },
   "GENERAL": {
     "SAVE": "Enregistrer",

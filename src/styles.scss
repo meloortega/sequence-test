@@ -69,16 +69,34 @@ a {
 .success-snackbar {
   background-color: #4caf50;
   color: white;
+  position: fixed !important;
+  bottom: 1rem !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  min-width: 200px !important;
+  max-width: 90% !important;
 }
 
 .error-snackbar {
   background-color: #f44336;
   color: white;
+  position: fixed !important;
+  bottom: 1rem !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  min-width: 200px !important;
+  max-width: 90% !important;
 }
 
 .info-snackbar {
   background-color: #2196f3;
   color: white;
+  position: fixed !important;
+  bottom: 1rem !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  min-width: 200px !important;
+  max-width: 90% !important;
 }
 
 html,

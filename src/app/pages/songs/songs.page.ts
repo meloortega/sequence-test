@@ -20,6 +20,7 @@ import { Subject, takeUntil } from 'rxjs';
 import { SongFacade } from '../../core/facades/song.facade';
 import { Memo } from '../../core/utils/memoize.util';
 import { SongSkeletonComponent } from '../../components/skeleton/song-skeleton/song-skeleton.component';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-songs-page',
@@ -39,6 +40,7 @@ import { SongSkeletonComponent } from '../../components/skeleton/song-skeleton/s
     LoadingComponent,
     TranslateModule,
     SongSkeletonComponent,
+    MatCardModule,
   ],
   animations: [
     trigger('staggerList', [
@@ -88,6 +90,16 @@ import { SongSkeletonComponent } from '../../components/skeleton/song-skeleton/s
         class="songs-page__grid"
         [@staggerList]="filteredSongs().length"
       >
+        <!-- Add song card for large screens -->
+        <mat-card class="songs-page__add-card" (click)="addSong()">
+          <div class="songs-page__add-image-container">
+            <div class="songs-page__add-content">
+              <mat-icon class="songs-page__add-icon">add</mat-icon>
+              <span class="songs-page__add-text">{{ 'COMMON.ADD' | translate }}</span>
+            </div>
+          </div>
+        </mat-card>
+
         <a
           *ngFor="let song of filteredSongs(); trackBy: trackById"
           [routerLink]="['/songs', song.id]"
@@ -97,10 +109,11 @@ import { SongSkeletonComponent } from '../../components/skeleton/song-skeleton/s
         </a>
       </div>
 
+      <!-- Floating add button for small screens -->
       <button
         mat-fab
         color="primary"
-        [attr.aria-label]="'SONGS.ADD' | translate"
+        [attr.aria-label]="'COMMON.ADD' | translate"
         class="songs-page__add-button"
         (click)="addSong()"
       >
@@ -126,11 +139,88 @@ import { SongSkeletonComponent } from '../../components/skeleton/song-skeleton/s
         }
       }
 
+      &__add-card {
+        display: none;
+        cursor: pointer;
+        height: 100%;
+        overflow: hidden;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition:
+          transform 0.3s,
+          box-shadow 0.3s;
+        border: 2px dashed #e0e0e0;
+
+        &:hover {
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+          transform: translateY(-8px);
+          border-color: #2196f3;
+          background-color: #f5f5f5;
+
+          .songs-page__add-icon {
+            transform: scale(1.1);
+          }
+        }
+      }
+
+      &__add-image-container {
+        aspect-ratio: 3 / 2;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+        background-color: #f5f5f5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      &__add-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+        width: 100%;
+        height: 100%;
+      }
+
+      &__add-icon {
+        font-size: 2.5rem;
+        width: 2.5rem;
+        height: 2.5rem;
+        color: #2196f3;
+        transition: transform 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      &__add-text {
+        font-size: 1rem;
+        color: #666;
+        text-align: center;
+        display: block;
+        width: 100%;
+      }
+
       &__add-button {
         position: fixed;
         bottom: 1rem;
         right: 1rem;
         z-index: 999;
+      }
+    }
+
+    @media (min-width: 1160px) {
+      .songs-page {
+        &__add-button {
+          display: none;
+        }
+
+        &__add-card {
+          display: block;
+        }
       }
     }
 

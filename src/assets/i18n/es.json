@@ -16,7 +16,8 @@
     "LOADING": "Cargando...",
     "NO_DATA": "No hay datos disponibles",
     "PRESS_ENTER_EDIT": "presiona enter para editar",
-    "REMOVE": "eliminar"
+    "REMOVE": "eliminar",
+    "ADD": "Añadir"
   },
   "GENERAL": {
     "SAVE": "Guardar",
