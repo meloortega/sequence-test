@@ -16,7 +16,8 @@
     "LOADING": "Loading...",
     "NO_DATA": "No data available",
     "PRESS_ENTER_EDIT": "press enter to edit",
-    "REMOVE": "remove"
+    "REMOVE": "remove",
+    "ADD": "Add"
   },
   "GENERAL": {
     "SAVE": "Save",
