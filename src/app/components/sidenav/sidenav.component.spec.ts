@@ -1,5 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { AppComponent } from './app.component';
+import { SidenavComponent } from './sidenav.component';
+import { MENU_RESOURCE } from '../../resources/menu.resource';
+import { ROUTE_RESOURCE } from '../../resources/route.resource';
+import { TRANSLATION_RESOURCE } from '../../resources/translation.resource';
 import { RouterTestingModule } from '@angular/router/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
@@ -7,29 +10,31 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { SidenavComponent } from './components/sidenav/sidenav.component';
-import { LanguageSelectorComponent } from './components/language-selector/language-selector.component';
-import { TRANSLATION_RESOURCE } from './resources/translation.resource';
-import { MENU_RESOURCE } from './resources/menu.resource';
-import { ROUTE_RESOURCE } from './resources/route.resource';
+import { LanguageSelectorComponent } from '../language-selector/language-selector.component';
 import { signal } from '@angular/core';
 import { of, BehaviorSubject } from 'rxjs';
-import { Router } from '@angular/router';
 
 // Add type declaration for Jasmine
 declare const expect: any;
-declare const spyOn: any;
 
-describe('AppComponent', () => {
-  let component: AppComponent;
-  let fixture: ComponentFixture<AppComponent>;
-  let translateService: any;
-  let translationResource: any;
+describe('SidenavComponent', () => {
+  let component: SidenavComponent;
+  let fixture: ComponentFixture<SidenavComponent>;
   let menuResource: any;
   let routeResource: any;
-  let router: Router;
+  let translateService: any;
+  let translationResource: any;
 
   beforeEach(async () => {
+    menuResource = {
+      toggleMenu: jasmine.createSpy('toggleMenu'),
+      closeMenu: jasmine.createSpy('closeMenu'),
+    };
+
+    routeResource = {
+      currentRoute: signal('/songs'),
+    };
+
     const currentLang = new BehaviorSubject('en');
 
     translateService = {
@@ -63,39 +68,28 @@ describe('AppComponent', () => {
       translateAsync: jasmine.createSpy('translateAsync').and.returnValue(of('Translated Text')),
     };
 
-    menuResource = {
-      isMenuOpen: jasmine.createSpy('isMenuOpen').and.returnValue(false),
-      closeMenu: jasmine.createSpy('closeMenu'),
-    };
-
-    routeResource = {
-      currentRoute: signal('/songs'),
-    };
-
     await TestBed.configureTestingModule({
       imports: [
-        AppComponent,
-        RouterTestingModule.withRoutes([]),
+        SidenavComponent,
+        RouterTestingModule,
         NoopAnimationsModule,
         TranslateModule.forRoot(),
         MatSidenavModule,
         MatIconModule,
         MatButtonModule,
         MatToolbarModule,
-        SidenavComponent,
         LanguageSelectorComponent,
       ],
       providers: [
-        { provide: TranslateService, useValue: translateService },
-        { provide: TRANSLATION_RESOURCE, useValue: translationResource },
         { provide: MENU_RESOURCE, useValue: menuResource },
         { provide: ROUTE_RESOURCE, useValue: routeResource },
+        { provide: TranslateService, useValue: translateService },
+        { provide: TRANSLATION_RESOURCE, useValue: translationResource },
       ],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(AppComponent);
+    fixture = TestBed.createComponent(SidenavComponent);
     component = fixture.componentInstance;
-    router = TestBed.inject(Router);
     fixture.detectChanges();
   });
 
@@ -103,9 +97,44 @@ describe('AppComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should close menu on navigation', () => {
-    spyOn(router, 'navigate').and.returnValue(Promise.resolve(true));
-    menuResource.closeMenu();
+  it('should close menu when clicking on a navigation link', () => {
+    const link = fixture.nativeElement.querySelector('a[routerLink="/songs"]');
+    link.click();
     expect(menuResource.closeMenu).toHaveBeenCalled();
+  });
+
+  it('should toggle menu when clicking close button', () => {
+    const closeButton = fixture.nativeElement.querySelector('.sidenav__close-button');
+    closeButton.click();
+    expect(menuResource.toggleMenu).toHaveBeenCalled();
+  });
+
+  it('should highlight active route', () => {
+    routeResource.currentRoute = signal('/songs');
+    fixture.detectChanges();
+
+    const menuItems = Array.from(
+      fixture.nativeElement.querySelectorAll('a.sidenav__link'),
+    ) as HTMLElement[];
+    const songsLink = menuItems.find((item) => item.getAttribute('routerLink') === '/songs');
+
+    expect(songsLink?.classList.contains('sidenav__link--active')).toBeTrue();
+  });
+
+  it('should not highlight inactive route', () => {
+    routeResource.currentRoute = signal('/artists');
+    fixture.detectChanges();
+
+    const menuItems = Array.from(
+      fixture.nativeElement.querySelectorAll('a.sidenav__link'),
+    ) as HTMLElement[];
+    const songsLink = menuItems.find((item) => item.getAttribute('routerLink') === '/songs');
+
+    expect(songsLink?.classList.contains('sidenav__link--active')).toBeFalse();
+  });
+
+  it('should contain language selector component', () => {
+    const languageSelector = fixture.nativeElement.querySelector('app-language-selector');
+    expect(languageSelector).toBeTruthy();
   });
 });
