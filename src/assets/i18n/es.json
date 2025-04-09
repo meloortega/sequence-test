@@ -1,0 +1,120 @@
+{
+  "APP": {
+    "TITLE": "Biblioteca de Música",
+    "WELCOME": "Bienvenido a nuestra aplicación",
+    "FOOTER": "Todos los derechos reservados"
+  },
+  "LANGUAGE": {
+    "SELECT": "Seleccionar idioma",
+    "ENGLISH": "Inglés",
+    "SPANISH": "Español",
+    "FRENCH": "Francés"
+  },
+  "COMMON": {
+    "BACK": "Volver",
+    "RETRY": "Reintentar",
+    "LOADING": "Cargando...",
+    "NO_DATA": "No hay datos disponibles",
+    "PRESS_ENTER_EDIT": "presiona enter para editar",
+    "REMOVE": "eliminar",
+    "ADD": "Añadir"
+  },
+  "GENERAL": {
+    "SAVE": "Guardar",
+    "CANCEL": "Cancelar",
+    "DELETE": "Eliminar",
+    "EDIT": "Editar",
+    "SEARCH": "Buscar"
+  },
+  "ACTIONS": {
+    "SAVE": "Guardar",
+    "CANCEL": "Cancelar",
+    "DELETE": "Eliminar",
+    "EDIT": "Editar"
+  },
+  "AUTH": {
+    "LOGIN": "Iniciar sesión",
+    "LOGOUT": "Cerrar sesión",
+    "REGISTER": "Registrarse",
+    "EMAIL": "Correo electrónico",
+    "PASSWORD": "Contraseña"
+  },
+  "TASKS": {
+    "TITLE": "Tareas",
+    "ADD": "Añadir Tarea",
+    "COMPLETED": "Completadas",
+    "PENDING": "Pendientes"
+  },
+  "ERRORS": {
+    "REQUIRED": "Este campo es obligatorio",
+    "INVALID_EMAIL": "Formato de correo no válido",
+    "LOADING_SONGS": "Ha ocurrido un error al cargar las canciones",
+    "DEFAULT": "Ha ocurrido un error",
+    "NOT_FOUND": "No se encontró el recurso solicitado",
+    "NETWORK": "Error de red. Por favor verifica tu conexión",
+    "NOT_FOUND": {
+      "TITLE": "Página No Encontrada",
+      "MESSAGE": "Estamos trabajando en algo increíble",
+      "SUBTITLE": "¡Vuelve pronto para descubrirlo!"
+    }
+  },
+  "MENU": {
+    "SONGS": "Canciones",
+    "ARTISTS": "Artistas",
+    "COMPANIES": "Compañías"
+  },
+  "SONGS": {
+    "TITLE": "Canciones",
+    "NEW_SONG": "Nueva Canción",
+    "SONG_DETAILS": "Detalles de la Canción",
+    "SONG_TITLE": "Título",
+    "ARTIST": "Artista",
+    "GENRES": "Géneros",
+    "YEAR": "Año",
+    "DURATION": "Duración (segundos)",
+    "RATING": "Valoración",
+    "POSTER": "URL de Imagen (póster)",
+    "COMPANIES": "Compañías",
+    "ADD_GENRE": "Nuevo género...",
+    "UNKNOWN_ARTIST": "Artista desconocido",
+    "NO_TITLE": "Sin título",
+    "SEARCH_PLACEHOLDER": "Título, artista o género",
+    "NOT_FOUND": "No se encontraron canciones para la búsqueda:",
+    "IMAGE_PREVIEW": "Previsualización de imagen",
+    "IMAGE_UNAVAILABLE": "Imagen no disponible"
+  },
+  "DIALOGS": {
+    "DELETE_SONG": {
+      "TITLE": "Eliminar canción",
+      "MESSAGE": "¿Estás seguro de que quieres eliminar esta canción? Esta acción no se puede deshacer."
+    },
+    "DELETE_CONFIRM": "Eliminar",
+    "DELETE_CANCEL": "Cancelar",
+    "ERROR": {
+      "TITLE": "Error",
+      "DEFAULT": "Ha ocurrido un error"
+    },
+    "INFO": {
+      "TITLE": "Información",
+      "ACCEPT": "Aceptar"
+    }
+  },
+  "VALIDATION": {
+    "REQUIRED_TITLE": "El título es obligatorio",
+    "REQUIRED_POSTER": "La URL de la imagen es obligatoria",
+    "REQUIRED_ARTIST": "El artista es obligatorio",
+    "REQUIRED_YEAR": "El año es obligatorio",
+    "REQUIRED_RATING": "La valoración es obligatoria",
+    "REQUIRED_DURATION": "La duración es obligatoria",
+    "RATING_RANGE": "La valoración debe estar entre 0 y 10",
+    "DURATION_MIN": "La duración debe ser de al menos 1 segundo"
+  },
+  "NOTIFICATIONS": {
+    "SONG_CREATED": "Canción creada con éxito",
+    "SONG_UPDATED": "Canción actualizada con éxito",
+    "SONG_DELETED": "Canción eliminada con éxito",
+    "ERROR_CREATING": "Error al crear la canción",
+    "ERROR_UPDATING": "Error al actualizar la canción",
+    "ERROR_DELETING": "Error al eliminar la canción"
+  }
+}

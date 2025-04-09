@@ -1,0 +1,120 @@
+{
+  "APP": {
+    "TITLE": "Music Library",
+    "WELCOME": "Welcome to our application",
+    "FOOTER": "All rights reserved"
+  },
+  "LANGUAGE": {
+    "SELECT": "Select language",
+    "ENGLISH": "English",
+    "SPANISH": "Spanish",
+    "FRENCH": "French"
+  },
+  "COMMON": {
+    "BACK": "Back",
+    "RETRY": "Retry",
+    "LOADING": "Loading...",
+    "NO_DATA": "No data available",
+    "PRESS_ENTER_EDIT": "press enter to edit",
+    "REMOVE": "remove",
+    "ADD": "Add"
+  },
+  "GENERAL": {
+    "SAVE": "Save",
+    "CANCEL": "Cancel",
+    "DELETE": "Delete",
+    "EDIT": "Edit",
+    "SEARCH": "Search"
+  },
+  "ACTIONS": {
+    "SAVE": "Save",
+    "CANCEL": "Cancel",
+    "DELETE": "Delete",
+    "EDIT": "Edit"
+  },
+  "AUTH": {
+    "LOGIN": "Login",
+    "LOGOUT": "Logout",
+    "REGISTER": "Register",
+    "EMAIL": "Email",
+    "PASSWORD": "Password"
+  },
+  "TASKS": {
+    "TITLE": "Tasks",
+    "ADD": "Add Task",
+    "COMPLETED": "Completed",
+    "PENDING": "Pending"
+  },
+  "ERRORS": {
+    "REQUIRED": "This field is required",
+    "INVALID_EMAIL": "Invalid email format",
+    "LOADING_SONGS": "An error occurred while loading songs",
+    "DEFAULT": "An error has occurred",
+    "NOT_FOUND": "The requested resource was not found",
+    "NETWORK": "Network error. Please check your connection",
+    "NOT_FOUND": {
+      "TITLE": "Page Not Found",
+      "MESSAGE": "We're working on something amazing",
+      "SUBTITLE": "Come back soon to discover it!"
+    }
+  },
+  "MENU": {
+    "SONGS": "Songs",
+    "ARTISTS": "Artists",
+    "COMPANIES": "Companies"
+  },
+  "SONGS": {
+    "TITLE": "Songs",
+    "NEW_SONG": "New Song",
+    "SONG_DETAILS": "Song Details",
+    "SONG_TITLE": "Title",
+    "ARTIST": "Artist",
+    "GENRES": "Genres",
+    "YEAR": "Year",
+    "DURATION": "Duration (seconds)",
+    "RATING": "Rating",
+    "POSTER": "Image URL (poster)",
+    "COMPANIES": "Companies",
+    "ADD_GENRE": "New genre...",
+    "UNKNOWN_ARTIST": "Unknown artist",
+    "NO_TITLE": "No title",
+    "SEARCH_PLACEHOLDER": "Title, artist or genre",
+    "NOT_FOUND": "No songs found for search:",
+    "IMAGE_PREVIEW": "Image preview",
+    "IMAGE_UNAVAILABLE": "Image unavailable"
+  },
+  "DIALOGS": {
+    "DELETE_SONG": {
+      "TITLE": "Delete song",
+      "MESSAGE": "Are you sure you want to delete this song? This action cannot be undone."
+    },
+    "DELETE_CONFIRM": "Delete",
+    "DELETE_CANCEL": "Cancel",
+    "ERROR": {
+      "TITLE": "Error",
+      "DEFAULT": "An error has occurred"
+    },
+    "INFO": {
+      "TITLE": "Information",
+      "ACCEPT": "Accept"
+    }
+  },
+  "VALIDATION": {
+    "REQUIRED_TITLE": "Title is required",
+    "REQUIRED_POSTER": "Image URL is required",
+    "REQUIRED_ARTIST": "Artist is required",
+    "REQUIRED_YEAR": "Year is required",
+    "REQUIRED_RATING": "Rating is required",
+    "REQUIRED_DURATION": "Duration is required",
+    "RATING_RANGE": "Rating must be between 0 and 10",
+    "DURATION_MIN": "Duration must be at least 1 second"
+  },
+  "NOTIFICATIONS": {
+    "SONG_CREATED": "Song created successfully",
+    "SONG_UPDATED": "Song updated successfully",
+    "SONG_DELETED": "Song deleted successfully",
+    "ERROR_CREATING": "Error creating song",
+    "ERROR_UPDATING": "Error updating song",
+    "ERROR_DELETING": "Error deleting song"
+  }
+}

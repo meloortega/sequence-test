@@ -1,20 +1,6 @@
 {
   "songs": [
     {
-      "id": 1,
-      "title": "Who did you think i was",
-      "poster": "http://dummyimage.com/400x600.png/cc0000/ffffff",
-      "genre": [
-        "Pop",
-        "Rock",
-        "Alternative"
-      ],
-      "year": 2007,
-      "duration": 424,
-      "rating": 9,
-      "artistId": 1
-    },
-    {
       "id": 2,
       "title": "Penny Lane",
       "poster": "http://dummyimage.com/400x600.png/dddddd/000000",
@@ -153,6 +139,18 @@
       "duration": 502,
       "rating": 8.39,
       "artistId": 7
+    },
+    {
+      "title": "Test Song",
+      "artistId": 1,
+      "year": 2016,
+      "duration": 180,
+      "genre": [
+        "Rock"
+      ],
+      "rating": 5,
+      "poster": "http://dummyimage.com/400x600.png/cc0000/ffffffhttps://example.com/poster.jpg",
+      "id": 12
     }
   ],
   "artists": [
@@ -251,7 +249,8 @@
       "rating": 8.32,
       "songs": [
         2,
-        3
+        3,
+        12
       ]
     },
     {
